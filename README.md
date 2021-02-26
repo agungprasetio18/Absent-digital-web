@@ -1,24 +1,16 @@
-# admin
+# Admin panel for Absent digital
+this is a web panel for absen digital
 
 ## Project setup
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## feuture
+- Login with firebase
+- Check Auth
+- Crud Users
+- Mobile apps <a href="https://github.com/hariyanuar/absendigitalmobile">Flutter</a>
