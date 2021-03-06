@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 //views
 import Dashboard from '../views/Dashboard.vue'
 import Login from '../views/Login.vue'
+import Users from '../views/Users.vue'
 
 //layouts
 import Auth from '../layouts/Auth.vue'
@@ -12,6 +13,7 @@ import Admin from '../layouts/Admin.vue'
 //firebase
 import firebase from 'firebase/app';
 import "firebase/auth";
+
 
 const routes = [
   {
@@ -24,8 +26,11 @@ const routes = [
       {
         path: '/dashboard',
         component: Dashboard
+      },
+      {
+        path: '/users',
+        component: Users
       }
-      
     ]
   },
   {

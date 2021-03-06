@@ -9,3 +9,15 @@ export const signIn = async (email, password) => {
         return null;
     }
 }
+
+export const logout = async ()=> {
+    try {
+        return await firebase
+        .auth()
+        .signOut()
+    } catch (e) {
+        console.log(e)
+        return null
+    }
+    
+}

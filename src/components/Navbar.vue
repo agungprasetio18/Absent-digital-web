@@ -14,25 +14,15 @@
         Dashboard
       </a>
       <!-- Form -->
-      <form
-        class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
-      >
-        <div class="relative flex w-full flex-wrap items-stretch">
-          <span
-            class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
-          >
-            <i class="fas fa-search"></i>
-          </span>
-          <input
-            type="text"
-            placeholder="Search here..."
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
-          />
-        </div>
-      </form>
       <!-- User -->
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-        <user-dropdown />
+        <a
+        href="/"
+        @click="logout"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
+        >
+        Logout
+      </a>
       </ul>
     </div>
   </nav>
@@ -40,11 +30,18 @@
 </template>
 
 <script>
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
-
+import {logout} from "../services/auth.js"
 export default {
-  components: {
-    UserDropdown,
-  },
-};
+  methods: {
+    async logout (){
+      const data = await logout();
+      if (data == null){
+        console.log('error')
+      } else {
+        this.$router.replace({ name: "login" });
+      }
+      
+    }
+  }
+}
 </script>
